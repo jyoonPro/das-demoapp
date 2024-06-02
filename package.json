@@ -1,34 +1,21 @@
 {
-  "name": "das-demoapp",
-  "productName": "das-demoapp",
-  "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
-  },
+  "name": "electronjs-test-dapp",
+  "private": true,
+  "version": "0.1.0",
   "devDependencies": {
-    "@electron-forge/cli": "^7.4.0",
-    "@electron-forge/maker-deb": "^7.4.0",
-    "@electron-forge/maker-rpm": "^7.4.0",
-    "@electron-forge/maker-squirrel": "^7.4.0",
-    "@electron-forge/maker-zip": "^7.4.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
-    "@electron-forge/plugin-fuses": "^7.4.0",
-    "@electron/fuses": "^1.8.0",
-    "electron": "30.0.5"
+    "@types/qrcode": "^1.5.1",
+    "electron": "^25.2.0"
   },
-  "keywords": [],
-  "author": {
-    "name": "Joseph Yoon",
-    "email": "joseph@jyoon.pro"
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && electron ./dist/src/main.js",
+    "debug": "DEBUG=true yarn build && electron ./dist/src/main.js",
+    "allow-scripts": ""
   },
-  "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "@metamask/sdk": "^0.18.5",
+    "qrcode": "^1.5.3",
+    "typescript": "^5.1.6",
+    "web3": "^4.9.0"
   }
 }
